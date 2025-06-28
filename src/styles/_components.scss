@@ -1,0 +1,46 @@
+@use 'variables';
+@use "sass:color";
+
+#news-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.news-item {
+  background-color: variables.$card-bg;
+  border-radius: variables.$border-radius;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, background-color 0.3s;
+
+  &:hover {
+    background-color: color.adjust(variables.$card-bg,$lightness: 5%);
+    transform: translateY(-3px);
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    color: variables.$primary-color;
+  }
+
+  a {
+    color: variables.$accent-color;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .date {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: color.adjust(variables.$primary-color, $lightness: 35%);
+  }
+}
+
+
